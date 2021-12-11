@@ -1,5 +1,6 @@
 from selenium import webdriver
-from selenium.webdriver.chrome.options import Options import Keys
+from selenium.webdriver.chrome.options import Options 
+import Keys
 from selenium.webdriver.firefox.options import Options
 import time
 import warnings
