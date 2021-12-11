@@ -1,11 +1,12 @@
 from pyvirtualdisplay import Display
+display = Display(visible=0, size=(800, 600))
+display.start()
+
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options 
 #import Keys
 import time
 import warnings
-display = Display(visible=0, size=(800, 600))
-display.start()
 
 warnings.filterwarnings("ignore", category=DeprecationWarning) 
 start_time = time.time()
