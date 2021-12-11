@@ -1,13 +1,16 @@
+from pyvirtualdisplay import Display
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options 
 #import Keys
-from selenium.webdriver.firefox.options import Options
 import time
 import warnings
+display = Display(visible=0, size=(800, 600))
+display.start()
 
 warnings.filterwarnings("ignore", category=DeprecationWarning) 
 start_time = time.time()
 chrome_options = Options()
+options.add_argument('--no-sandbox')
 #options.headless = True
 browser = webdriver.Chrome(executable_path="./chromedriver")
 
