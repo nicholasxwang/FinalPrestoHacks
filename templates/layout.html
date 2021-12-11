@@ -1,0 +1,25 @@
+<!--Style Sheets!-->
+<link rel="stylesheet" href="static/css/styles.css">
+
+<!--Javascript!-->
+<script src="/static/nodejs/main.js"></script>
+<!--Jquery!-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<!--Icons!-->
+
+<!--Title!-->
+<title>MusiqueWorld</title>
+{% block main %} {% endblock %}
+
+<!--Twemoji!-->
+<script src="https://twemoji.maxcdn.com/v/latest/twemoji.min.js" crossorigin="anonymous"></script>
+<script>
+  window.onload = function() {      
+      twemoji.parse(document.body, 
+              {folder: 'svg', ext: '.svg',size: "32x32"},
+      );
+      twemoji.size = '36x36';
+  }
+
+</script>
