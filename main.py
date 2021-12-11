@@ -9,10 +9,10 @@ display.start()
 
 warnings.filterwarnings("ignore", category=DeprecationWarning) 
 start_time = time.time()
-chrome_options = Options()
+options = Options()
 options.add_argument('--no-sandbox')
 #options.headless = True
-browser = webdriver.Chrome(executable_path="./chromedriver")
+browser = webdriver.Chrome(executable_path="./chromedriver", options=options)
 
 ignore = [
   "wallpaper",
