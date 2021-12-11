@@ -12,7 +12,7 @@ start_time = time.time()
 options = webdriver.ChromeOptions()
 options.add_argument('--no-sandbox')
 #options.headless = True
-browser = webdriver.Chrome(options=options)
+browser = webdriver.Chrome("./chromedriver",options=options)
 
 ignore = [
   "wallpaper",
