@@ -27,3 +27,5 @@ console.warn: SearchSettings: "get: No settings file exists, new profile?" (new 
 DevTools listening on ws://localhost:53917/devtools/browser/9df9e0e3-5252-46bf-8059-afa25562029f
 1639260422536	Marionette	INFO	Listening on port 39725
 1639260422592	Marionette	WARN	TLS certificate errors will be ignored for this session
+console.log: WebExtensions: reset-default-search: starting.
+console.log: WebExtensions: reset-default-search: No addons in our list are installed.

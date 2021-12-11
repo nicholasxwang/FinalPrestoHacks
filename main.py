@@ -1,14 +1,14 @@
-from selenium.webdriver import Firefox
-from selenium.webdriver.common.keys import Keys
+from selenium import webdriver
+from selenium.webdriver.chrome.options import Options import Keys
 from selenium.webdriver.firefox.options import Options
 import time
 import warnings
 
 warnings.filterwarnings("ignore", category=DeprecationWarning) 
 start_time = time.time()
-options = Options()
+chrome_options = Options()
 #options.headless = True
-browser = Firefox(executable_path="./geckodriver",options=options)
+browser = webdriver.Chrome(executable_path="./chromedriver")
 
 ignore = [
   "wallpaper",
