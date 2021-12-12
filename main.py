@@ -1,19 +1,9 @@
 from pyvirtualdisplay import Display
 display = Display(visible=0, size=(800, 600))
 display.start()
-
 from selenium import webdriver
-from selenium.webdriver.firefox.options import Options 
-#import Keys
 import time
-import warnings
-
-warnings.filterwarnings("ignore", category=DeprecationWarning) 
-start_time = time.time()
-options = webdriver.FirefoxOptions()
-options.add_argument('--no-sandbox')
-#options.headless = True
-browser = webdriver.Firefox("./geckodriver",options=options)
+browser = webdriver.Firefox()
 
 ignore = [
   "wallpaper",
