@@ -679,7 +679,6 @@ def allowed_file(filename):
 @app.route('/', methods=['POST'])
 def upload_file():
     if request.method == 'POST':
-        return str(request.files)
         # check if the post request has the file part
         if 'file1' not in request.files:
             print("1")
@@ -697,7 +696,12 @@ def upload_file():
             filename = secure_filename(file.filename)
             file.save(os.path.join(UPLOAD_FOLDER, filename))
             a = main_program(os.path.join(UPLOAD_FOLDER, filename))
-            return str(a)
+            musixmatch = Musixmatch('bbd8cc3d9f6c1444e01d9d66b44f0f49')
+            songs= []
+            for i in a:
+              musicdata = musixmatch.track_search(q_track = i,page_size=10,page=1, s_track_rating='desc')
+              songs += musicdata
+            return str(songs)
 
             
 #Run
