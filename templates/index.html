@@ -1,5 +1,29 @@
 {% extends "layout.html" %}
 {% block main %}
+    <script>
+      function submit_(){
+         const input = document.getElementById('file-input');
+      let objectURL;
+
+      input.addEventListener('change', function () {
+        if (objectURL) {
+          URL.revokeObjectURL(objectURL);  
+        }
+
+      });
+      var request =  $.ajax({
+        type: "POST",
+        url: "/getSongs",
+        data: {
+          "a":objectURL
+        }
+      });
+      request.done(function(data){
+        alert(data);
+      }
+      }
+      
+    </script>
 <html>
   <head>
     <script src="https://prestohacks.nicholasxwang.repl.co/static/js/main.js"></script>
@@ -30,30 +54,7 @@
         <p id="loaded_n_total"></p>
       </div>
     </div>
-    <script>
-      function submit_(){
-         const input = document.getElementById('file-input');
-      let objectURL;
 
-      input.addEventListener('change', function () {
-        if (objectURL) {
-          URL.revokeObjectURL(objectURL);  
-        }
-
-      });
-      var request =  $.ajax({
-        type: "POST",
-        url: "/getSongs",
-        data: {
-          "a":objectURL
-        }
-      });
-      request.done(function(data){
-        alert(data);
-      }
-      }
-      
-    </script>
   </body>
 </html>
 {% endblock %}
