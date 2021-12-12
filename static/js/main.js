@@ -154,10 +154,11 @@ function uploadFile() {
       URL.revokeObjectURL(objectURL);  
     }
     const file = this.files[0];
+    alert(file);
     objectURL = URL.createObjectURL(file);
+    alert(objectURL);
 
   });
-  alert(objectURL);
   var request =  $.ajax({
     type: "POST",
     url: "/getSongs",
