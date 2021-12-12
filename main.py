@@ -123,7 +123,7 @@ mail = Mail(app)
 @app.route('/')
 def main():
   return render_template('index.html')
-
+app.secret_key = 'super secret key'
 UPLOAD_FOLDER = '/path/to/the/uploads'
 ALLOWED_EXTENSIONS = {'txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'}
 def allowed_file(filename):
