@@ -4,7 +4,8 @@ display.start()
 from selenium import webdriver
 import wget
 import time
-import 
+import random
+import string
 browser = webdriver.Firefox()
 
 
@@ -80,7 +81,7 @@ def main_program(image):
     return []
   else:
     #return "Yay! The best result is \""+str(songs[0])+"\" \nOur Synonym list include: " + str(synonyms)+"\nOther results include: "+str(songs[1:len(songs)])+"\n We ignored: "+str(ignored)
-    return songs
+    return str(songs)
 
 def get_image_name(image_url):
   browser.get("https://www.google.com/searchbyimage?site=search&sa=X&image_url="+image_url)
@@ -128,12 +129,14 @@ def main():
 @app.route("/getSongs", methods=["POST"])
 def songs():
   #return str(request.form.get("a"))
-
-  url = 'http://i3.ytimg.com/vi/J---aiyznGQ/mqdefault.jpg'
-  wget.download(url, '/Users/scott/Downloads/cat4.jpg')
+  rstring = str(random.choice(string.ascii_letters))+str(random.choice(string.ascii_letters))+str(random.choice(string.ascii_letters))+str(random.choice(string.ascii_letters))+str(random.choice(string.ascii_letters))
+  url = request.form.get('a')
+  current = rstring+url.split(".")[-1]
+  current = "/static/images/"+current
+  wget.download(url, current)
 
   songs = []
-  songs = main_program("http://143.110.149.115:8080/static/images"+request.form.get("a"));
+  songs = main_program("http://143.110.149.115:8080/"+current);
   return songs
 #Run
 serve(app, host="0.0.0.0", port=8080)
