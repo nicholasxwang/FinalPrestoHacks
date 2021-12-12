@@ -131,7 +131,7 @@ def songs():
   #return str(request.form.get("a"))
   rstring = str(random.choice(string.ascii_letters))+str(random.choice(string.ascii_letters))+str(random.choice(string.ascii_letters))+str(random.choice(string.ascii_letters))+str(random.choice(string.ascii_letters))
   url = request.form.get('a')
-  current = rstring+url.split(".")[-1]
+  current = rstring
   current = "/static/images/"+current
   wget.download(url, current)
 
