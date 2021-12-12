@@ -14,6 +14,7 @@ bs4 = "^0.0.1"
 pymongo = "^4.0.1"
 PyVirtualDisplay = "^2.2"
 wget = "^3.2"
+youtube_dl = "^2021.6.6"
 
 [tool.poetry.dev-dependencies]
 
