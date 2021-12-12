@@ -135,7 +135,8 @@ function _(el) {
 
 function uploadFile() {
   //var file = _("file").files[0];
-  // alert(file.name+" | "+file.size+" | "+file.type);
+  const file = this.files[0];
+  //alert(file.name+" | "+file.size+" | "+file.type);
   var formdata = new FormData();
   formdata.append("file", file);
   var ajax = new XMLHttpRequest();
@@ -152,7 +153,7 @@ function uploadFile() {
   if (objectURL) {
     URL.revokeObjectURL(objectURL);  
   }
-  const file = this.files[0];
+  //const file = this.files[0];
   alert("File:");
   alert(file);
   objectURL = URL.createObjectURL(file);
