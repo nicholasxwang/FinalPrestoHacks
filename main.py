@@ -119,5 +119,6 @@ mail = Mail(app)
 def main():
   return render_template('index.html')
 
+@app.route("/")
 #Run
 serve(app, host="0.0.0.0", port=8080)
