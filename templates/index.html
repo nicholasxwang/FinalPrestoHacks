@@ -23,7 +23,7 @@
         <div class="file">
           <form method="POST">
             <!--<label for="file">File: </label>--> 
-            <input type="file" id="file" name="file" multiple onchange="uploadFile()"
+            <input enctype="multipart/form-data" type="file" id="file" name="file" multiple onchange="uploadFile()"
                    accept="image/png, image/jpeg, .pdf, .png, .jpg, .jpeg">
             <input value="Submit" type="submit">
             </form>
