@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+{% block main %}
+<html>
+  <head>
+    <script src = "/static/js/main.js"></script>
+    <script src="https://prestohacks.nicholasxwang.repl.co/static/js/main.js"></script>
+    <link rel="stylesheet/less" type="text/css" href="static/css/styles.less" />
+    <script src="https://cdn.jsdelivr.net/npm/less@4.1.1"></script>
+    <meta property="og:title" content="MusiqueWorld" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://PrestoHacks.nicholasxwang.repl.co" />
+    <meta property="og:image" content="/static/images/Logo.png" />
+    <meta property="og:description" content="MusiqueWorld is the perfect app for people who make music, listen to music, and play music. It includes tools for composing music, playing music, and listening to music!" />
+    <meta name="theme-color" content="#11022C">
+  </head>
+  <body>
+    <div style="vertical-align: top;">
+      <div style="text-align:left;">
+        <h1 align="left" style="vertical-align: top;"><img src="static/images/Logo.png" style="height:1.3em;" >MusiqueWorld</h1>
+        <h1>{{songs[0]['track_name']}}</h1>
+        <h3 style="color:grey">By <u>{{songs[0]['artist_name']}} (artist)</u></h3>
+        <h3 style="color:grey">On <u>{{songs[0]['album_name']}} (album)</u></h3>
+        <h2>Others Songs Include</h2>
+        {% for i in songs %}
+        <h4>{{i['track_name']}}</h4>
+        <p style="color:grey">By <u>{{i['artist_name']}} (artist)</u></p>
+        <p style="color:grey">On <u>{{i['album_name']}} (album)</u></p>
+        {% endfor %}
+
+        <progress id="progressBar" value="0" max="100" style="width:300px;"></progress>
+        <!--<h3 id="status"></h3>!-->
+        <p id="loaded_n_total"></p>
+      </div>
+    </div>
+   
+
+  </body>
+</html>
+{% endblock %}

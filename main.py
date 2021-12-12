@@ -701,7 +701,10 @@ def upload_file():
             for i in a:
               musicdata = musixmatch.track_search(q_track = i,page_size=10,page=1, s_track_rating='desc')
               songs += musicdata["message"]["body"]["track_list"]
-            return str(songs)
+            for i in range(0,len(songs)):
+              songs[i] = songs[i]['track']
+
+            return render_template("recording.html",songs=songs)
 
             
 #Run
