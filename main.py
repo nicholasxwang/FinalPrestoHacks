@@ -124,6 +124,7 @@ def main():
 
 @app.route("/getSongs", methods=["POST"])
 def songs():
+  return str(request.form.get("a"))
   songs = []
   songs = main_program("http://143.110.149.115:8080/static/images"+request.form.get("a"));
   return songs
