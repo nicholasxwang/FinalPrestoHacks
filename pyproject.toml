@@ -13,6 +13,7 @@ Flask = "^2.0.2"
 bs4 = "^0.0.1"
 pymongo = "^4.0.1"
 PyVirtualDisplay = "^2.2"
+wget = "^3.2"
 
 [tool.poetry.dev-dependencies]
 

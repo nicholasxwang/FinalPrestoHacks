@@ -171,6 +171,9 @@ function uploadFile() {
     alert("Data:");
     alert(data);
   });
+  request.error(function(data){
+    alert("Error");
+  });
 }
 
 function progressHandler(event) {
