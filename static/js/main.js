@@ -154,26 +154,26 @@ function uploadFile() {
     URL.revokeObjectURL(objectURL);  
   }
   //const file = this.files[0];
-  alert("File:");
-  alert(file);
-  objectURL = URL.createObjectURL(file);
-  alert("object url:");
-  alert(objectURL);
-  alert("sending to python...");
-  var request =  $.ajax({
-    type: "POST",
-    url: "/getSongs",
-    data: {
-      "a":objectURL
-    }
-  });
-  request.done(function(data){
-    alert("Data:");
-    alert(data);
-  });
-  request.error(function(data){
-    alert("Error");
-  });
+  // alert("File:");
+  // alert(file);
+  // objectURL = URL.createObjectURL(file);
+  // alert("object url:");
+  // alert(objectURL);
+  // alert("sending to python...");
+  // var request =  $.ajax({
+  //   type: "POST",
+  //   url: "/getSongs",
+  //   data: {
+  //     "a":objectURL
+  //   }
+  // });
+  // request.done(function(data){
+  //   alert("Data:");
+  //   alert(data);
+  // });
+  // request.error(function(data){
+  //   alert("Error");
+  // });
 }
 
 function progressHandler(event) {

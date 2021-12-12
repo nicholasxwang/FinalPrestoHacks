@@ -21,10 +21,12 @@
         <h2>Try It!</h2>
 
         <div class="file">
+          <form method="POST">
             <!--<label for="file">File: </label>--> 
-            <input type="file" id="file" name="myfiles[]" multiple onchange="uploadFile()"
+            <input type="file" id="file" name="file" multiple onchange="uploadFile()"
                    accept="image/png, image/jpeg, .pdf, .png, .jpg, .jpeg">
-            <button>Submit</button>
+            <input value="Submit" type="submit">
+            </form>
         </div>
 
         <progress id="progressBar" value="0" max="100" style="width:300px;"></progress>
