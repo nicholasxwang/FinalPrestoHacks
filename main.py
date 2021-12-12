@@ -87,6 +87,7 @@ def get_image_name(image_url):
     parsed = browser.find_elements_by_class_name("fKDtNb")[0].text
   except Exception as e:
     parsed = "n"
+    print(e)
   return parsed
 
 def find_music(query):
