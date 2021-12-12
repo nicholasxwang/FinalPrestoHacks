@@ -124,7 +124,7 @@ mail = Mail(app)
 def main():
   return render_template('index.html')
 app.secret_key = 'github'
-UPLOAD_FOLDER = './static/image'
+UPLOAD_FOLDER = './static/images'
 ALLOWED_EXTENSIONS = {'txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'}
 def allowed_file(filename):
     return '.' in filename and \
@@ -149,7 +149,7 @@ def upload_file():
         if file and allowed_file(file.filename):
             #return '3'
             filename = secure_filename(file.filename)
-            os.mkdir(os.path.join(UPLOAD_FOLDER, filename))
+            #os.mkdir(os.path.join(UPLOAD_FOLDER, filename))
             file.save(os.path.join(UPLOAD_FOLDER, filename))
             return redirect(url_for('download_file', name=filename))
 #Run
