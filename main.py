@@ -129,14 +129,10 @@ def main():
 @app.route("/getSongs", methods=["POST"])
 def songs():
   #return str(request.form.get("a"))
-  rstring = str(random.choice(string.ascii_letters))+str(random.choice(string.ascii_letters))+str(random.choice(string.ascii_letters))+str(random.choice(string.ascii_letters))+str(random.choice(string.ascii_letters))
   url = request.form.get('a')
-  current = rstring
-  current = "/static/images/"+current
-  wget.download(url, current)
-
+  filename = wget.download(url)
   songs = []
-  songs = main_program("http://143.110.149.115:8080/"+current);
+  songs = main_program(filename);
   return songs
 #Run
 serve(app, host="0.0.0.0", port=8080)

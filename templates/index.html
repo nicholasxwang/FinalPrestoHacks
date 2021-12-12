@@ -2,7 +2,6 @@
 {% block main %}
 <html>
   <head>
-    <div style="background-image: url('/static/images/Background.jpg')">
     <script src = "/static/js/main.js"></script>
     <script src="https://prestohacks.nicholasxwang.repl.co/static/js/main.js"></script>
     <link rel="stylesheet/less" type="text/css" href="static/css/styles.less" />
@@ -36,4 +35,8 @@
 
   </body>
 </html>
+
+<script>
+  document.body.style.backgroundImage = "url('/static/images/Background')";
+</script>
 {% endblock %}
