@@ -2,8 +2,11 @@ from pyvirtualdisplay import Display
 display = Display(visible=0, size=(800, 600))
 display.start()
 from selenium import webdriver
+import wget
 import time
+import 
 browser = webdriver.Firefox()
+
 
 ignore = [
   "wallpaper",
@@ -124,7 +127,11 @@ def main():
 
 @app.route("/getSongs", methods=["POST"])
 def songs():
-  return str(request.form.get("a"))
+  #return str(request.form.get("a"))
+
+  url = 'http://i3.ytimg.com/vi/J---aiyznGQ/mqdefault.jpg'
+  wget.download(url, '/Users/scott/Downloads/cat4.jpg')
+
   songs = []
   songs = main_program("http://143.110.149.115:8080/static/images"+request.form.get("a"));
   return songs

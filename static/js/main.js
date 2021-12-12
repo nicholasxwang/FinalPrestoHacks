@@ -159,7 +159,7 @@ function uploadFile() {
   objectURL = URL.createObjectURL(file);
   alert("object url:");
   alert(objectURL);
-
+  alert("sending to python...");
   var request =  $.ajax({
     type: "POST",
     url: "/getSongs",
