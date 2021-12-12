@@ -133,6 +133,7 @@ def allowed_file(filename):
 @app.route('/', methods=['POST'])
 def upload_file():
     if request.method == 'POST':
+        return str(request.files)
         # check if the post request has the file part
         if 'file' not in request.files:
             return '1'
