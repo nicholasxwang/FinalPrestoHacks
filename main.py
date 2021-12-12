@@ -153,6 +153,6 @@ def upload_file():
             file.save(os.path.join(UPLOAD_FOLDER, filename))
             x=os.path.join(UPLOAD_FOLDER, filename)
             #return redirect(url_for('upload_file', name=filename))
-            return str(main_program(x))
+            return str(get_image_name(x))
 #Run
 serve(app, host="0.0.0.0", port=8080)
