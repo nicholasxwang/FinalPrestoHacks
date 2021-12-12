@@ -36,7 +36,8 @@ def main_program(image):
   a = str(get_image_name(image))
   #Check if it exists
   if a == "n":
-    return "Sorry, I could not find any song related to your picture. How about, try Head Up by The Score!"
+    #return "Sorry, I could not find any song related to your picture. How about, try Head Up by The Score!"
+    return []
   #split into words
   word = a.split(" ")
   songs = []
@@ -72,9 +73,11 @@ def main_program(image):
           songs.append(j.text)
 
   if len(songs) == 0:
-    return "I found what your picture is thanks to my smart AI but I could not find any songs. How about, try AJR's Bang? Synonyms include "+str(synonyms)+"\n We ignored: "+str(ignored)
+    #return "I found what your picture is thanks to my smart AI but I could not find any songs. How about, try AJR's Bang? Synonyms include "+str(synonyms)+"\n We ignored: "+str(ignored)
+    return []
   else:
-    return "Yay! The best result is \""+str(songs[0])+"\" \nOur Synonym list include: " + str(synonyms)+"\nOther results include: "+str(songs[1:len(songs)])+"\n We ignored: "+str(ignored)
+    #return "Yay! The best result is \""+str(songs[0])+"\" \nOur Synonym list include: " + str(synonyms)+"\nOther results include: "+str(songs[1:len(songs)])+"\n We ignored: "+str(ignored)
+    return songs
 
 def get_image_name(image_url):
   browser.get("https://www.google.com/searchbyimage?site=search&sa=X&image_url="+image_url)
