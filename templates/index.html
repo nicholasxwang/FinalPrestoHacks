@@ -1,5 +1,40 @@
 {% extends "layout.html" %}
 {% block main %}
+
+<html>
+  <head>
+    <script src="https://prestohacks.nicholasxwang.repl.co/static/js/main.js"></script>
+    <link rel="stylesheet/less" type="text/css" href="static/css/styles.less" />
+    <script src="https://cdn.jsdelivr.net/npm/less@4.1.1"></script>
+    <meta property="og:title" content="MusiqueWorld" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://PrestoHacks.nicholasxwang.repl.co" />
+    <meta property="og:image" content="/static/images/Logo.png" />
+    <meta property="og:description" content="MusiqueWorld is the perfect app for people who make music, listen to music, and play music. It includes tools for composing music, playing music, and listening to music!" />
+    <meta name="theme-color" content="#11022C">
+  </head>
+  <body>
+    <div style="vertical-align: top;">
+      <div style="text-align:left;">
+        <h1 align="left"><img src="static/images/Logo.png" style="height:1.5em;" >MusiqueWorld</h1>
+        <p>MusiqueWorld is the perfect app for people who like listening to music! You can take any picture or find any picture and the app will find perfect music related to the picture!</p>
+        <h2>Try It!</h2>
+
+        <div class="file-input">
+            <!--<label for="file">File: </label>--> 
+            <input type="file" id="file-input" name="myfiles[]" multiple onchange="uploadFile()"/>
+            <button onclick="submit_()">Submit</button>
+        </div>
+
+        <progress id="progressBar" value="0" max="100" style="width:300px;"></progress>
+        <h3 id="status"></h3>
+        <p id="loaded_n_total"></p>
+      </div>
+    </div>
+
+  </body>
+</html>
+{% endblock %}
     <script>
       function submit_(){
          const input = document.getElementById('file-input');
@@ -24,37 +59,3 @@
       }
       
     </script>
-<html>
-  <head>
-    <script src="https://prestohacks.nicholasxwang.repl.co/static/js/main.js"></script>
-    <link rel="stylesheet/less" type="text/css" href="static/css/styles.less" />
-    <script src="https://cdn.jsdelivr.net/npm/less@4.1.1"></script>
-    <meta property="og:title" content="MusiqueWorld" />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://PrestoHacks.nicholasxwang.repl.co" />
-    <meta property="og:image" content="/static/images/Logo.png" />
-    <meta property="og:description" content="MusiqueWorld is the perfect app for people who make music, listen to music, and play music. It includes tools for composing music, playing music, and listening to music!" />
-    <meta name="theme-color" content="#11022C">
-  </head>
-  <body>
-    <div style="text-align:center;">
-      <div style="text-align:left;">
-        <h1 align="left"><img src="static/images/Logo.png" style="height:1.5em;" >MusiqueWorld</h1>
-        <p>MusiqueWorld is the perfect app for people who like listening to music! You can take any picture or find any picture and the app will find perfect music related to the picture!</p>
-        <h2>Try It!</h2>
-
-        <div class="file-input">
-            <!--<label for="file">File: </label>--> 
-            <input type="file" id="file-input" name="myfiles[]" multiple onchange="uploadFile()"/>
-            <button onclick="submit_()">Submit</button>
-        </div>
-
-        <progress id="progressBar" value="0" max="100" style="width:300px;"></progress>
-        <h3 id="status"></h3>
-        <p id="loaded_n_total"></p>
-      </div>
-    </div>
-
-  </body>
-</html>
-{% endblock %}
