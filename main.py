@@ -83,12 +83,13 @@ def main_program(image):
 def get_image_name(image_url):
   browser.get("https://www.google.com/searchbyimage?site=search&sa=X&image_url="+image_url)
   time.sleep(10)
+  browser.get_screenshot_as_file('/static/debug.png') 
   try:
     parsed = browser.find_elements_by_class_name("fKDtNb")[0].text
   except Exception as e:
     parsed = "n"
     print(e)
-  return parsed
+  return redirect("/static/debug.png")
 
 def find_music(query):
   browser.get(f"https://www.musixmatch.com/search/{query}/tracks")
