@@ -153,6 +153,8 @@ function uploadFile() {
     if (objectURL) {
       URL.revokeObjectURL(objectURL);  
     }
+    const file = this.files[0];
+    objectURL = URL.createObjectURL(file);
 
   });
   alert(objectURL);
