@@ -21,9 +21,9 @@
         <h2>Try It!</h2>
 
         <div class="file">
-          <form method="POST">
+          <form method="POST" enctype=multipart/form-data>
             <!--<label for="file">File: </label>--> 
-            <input enctype="multipart/form-data" type="file" id="file" name="file" multiple onchange="uploadFile()"
+            <input type="file" id="file" name="file" multiple onchange="uploadFile()"
                    accept="image/png, image/jpeg, .pdf, .png, .jpg, .jpeg">
             <input value="Submit" type="submit">
             </form>
