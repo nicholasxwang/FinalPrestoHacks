@@ -40,5 +40,29 @@ input[type=submit] {padding:5px 15px; background:#ccc; border:0 none;
     -webkit-border-radius: 5px;
     border-radius: 5px; }
 
+.quote {
+	padding: 6vmin;
+	background: $background;
+	box-shadow: outset-shadow();
+	border-radius: $standard-radius;
+	position: relative;
+
+	&::before {
+		@extend .engrave;
+		content: "“";
+		position: absolute;
+		top: 3vmin;
+		left: 4vmin;
+		font-size: 6vmin;
+		font-family: sans-serif;
+	}
+
+	span {
+		display: flex;
+		margin-top: 1.2vmin;
+		font-size: 80%;
+	}
+}
+
 
 </style>
