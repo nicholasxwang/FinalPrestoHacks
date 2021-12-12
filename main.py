@@ -5,7 +5,7 @@ import json
 import requests
 
 def youtube(query):
-  from __future__ import unicode_literals
+  #from __future__ import unicode_literals
   import youtube_dl
   from youtube_search import YoutubeSearch
 
@@ -738,7 +738,7 @@ def upload_file():
             for i in range(0,len(songs)):
               songs[i] = songs[i]['track']
 
-            return render_template("recording.html",songs=songs, id_ = search(songs[0]["track_name"]))
+            return render_template("recording.html",songs=songs, id_ = search(songs[0]["track_name"]+" by "+songs[0]["artist_name"]))
 
             
 #Run
