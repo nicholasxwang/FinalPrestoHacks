@@ -20,9 +20,9 @@
         <p>MusiqueWorld is the perfect app for people who like listening to music! You can take any picture or find any picture and the app will find perfect music related to the picture!</p>
         <h2>Try It!</h2>
 
-        <div class="file-input">
+        <div class="file">
             <!--<label for="file">File: </label>--> 
-            <input type="file" id="file-input" name="myfiles[]" multiple onchange="uploadFile()"/>
+            <input type="file" id="file" name="myfiles[]" multiple onchange="uploadFile()"/>
             <button onclick="submit_()">Submit</button>
         </div>
 
@@ -37,7 +37,7 @@
 {% endblock %}
     <script>
       function submit_(){
-         const input = document.getElementById('file-input');
+         const input = document.getElementById('file');
       let objectURL;
 
       input.addEventListener('change', function () {
