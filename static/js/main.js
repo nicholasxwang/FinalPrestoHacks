@@ -149,18 +149,16 @@ function uploadFile() {
   const input = document.getElementById('file');
   let objectURL;
 
-  input.addEventListener('change', function () {
-    if (objectURL) {
-      URL.revokeObjectURL(objectURL);  
-    }
-    const file = this.files[0];
-    alert("File:");
-    alert(file);
-    objectURL = URL.createObjectURL(file);
-    alert("object url:");
-    alert(objectURL);
+  if (objectURL) {
+    URL.revokeObjectURL(objectURL);  
+  }
+  const file = this.files[0];
+  alert("File:");
+  alert(file);
+  objectURL = URL.createObjectURL(file);
+  alert("object url:");
+  alert(objectURL);
 
-  });
   var request =  $.ajax({
     type: "POST",
     url: "/getSongs",
