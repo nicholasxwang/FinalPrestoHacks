@@ -705,7 +705,7 @@ def search(query):
               break
   
   html = urllib.request.urlopen(
-      "https://www.youtube.com/results?search_query=" + search_keyword.encode('utf-8'))
+      "https://www.youtube.com/results?search_query=" + str(search_keyword.encode('utf-8')))
 
   video_ids = re.findall(r"watch\?v=(\S{11})", html.read().decode())
 
