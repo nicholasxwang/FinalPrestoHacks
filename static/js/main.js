@@ -96,8 +96,7 @@
 		          $wrap = $this.parent(),
 
 		          // Filter empty input
-		          $inputs = $wrap.siblings().find('.file-upload-input')
-		            .filter(function(){ return !this.value }),
+		          $inputs = $wrap.siblings().find('.file-upload-input').filter(function(){ return !this.value; });
 
 		          $file = $('<input type="file" id="'+ uniqId +'" name="'+ $this.attr('name') +'"/>');
 
@@ -164,7 +163,7 @@ function uploadFile() {
   });
   request.done(function(data){
     alert(data);
-  }
+  });
 }
 
 function progressHandler(event) {
