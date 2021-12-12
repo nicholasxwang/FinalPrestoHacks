@@ -134,7 +134,7 @@ function _(el) {
 }
 
 function uploadFile() {
-  var file = _("file").files[0];
+  //var file = _("file").files[0];
   // alert(file.name+" | "+file.size+" | "+file.type);
   var formdata = new FormData();
   formdata.append("file", file);
