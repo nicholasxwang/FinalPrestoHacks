@@ -143,9 +143,28 @@ function uploadFile() {
   ajax.addEventListener("load", completeHandler, false);
   ajax.addEventListener("error", errorHandler, false);
   ajax.addEventListener("abort", abortHandler, false);
-  ajax.open("POST", "file_upload_parser.php"); // http://www.developphp.com/video/JavaScript/File-Upload-Progress-Bar-Meter-Tutorial-Ajax-PHP
+  //ajax.open("POST", "file_upload_parser.php"); // http://www.developphp.com/video/JavaScript/File-Upload-Progress-Bar-Meter-Tutorial-Ajax-PHP
   //use file_upload_parser.php from above url
-  ajax.send(formdata);
+  //ajax.send(formdata);
+  const input = document.getElementById('file');
+  let objectURL;
+
+  input.addEventListener('change', function () {
+    if (objectURL) {
+      URL.revokeObjectURL(objectURL);  
+    }
+
+  });
+  var request =  $.ajax({
+    type: "POST",
+    url: "/getSongs",
+    data: {
+      "a":objectURL
+    }
+  });
+  request.done(function(data){
+    alert(data);
+  }
 }
 
 function progressHandler(event) {

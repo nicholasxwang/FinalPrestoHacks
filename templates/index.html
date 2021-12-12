@@ -10,7 +10,7 @@
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://PrestoHacks.nicholasxwang.repl.co" />
     <meta property="og:image" content="/static/images/Logo.png" />
-    <meta property="og:description" content="a-MusiqueWorld is the perfect app for people who make music, listen to music, and play music. It includes tools for composing music, playing music, and listening to music!" />
+    <meta property="og:description" content="MusiqueWorld is the perfect app for people who make music, listen to music, and play music. It includes tools for composing music, playing music, and listening to music!" />
     <meta name="theme-color" content="#11022C">
   </head>
   <body>
@@ -23,7 +23,7 @@
         <div class="file">
             <!--<label for="file">File: </label>--> 
             <input type="file" id="file" name="myfiles[]" multiple onchange="uploadFile()"/>
-            <button onclick="submit_()">Submit</button>
+            <button>Submit</button>
         </div>
 
         <progress id="progressBar" value="0" max="100" style="width:300px;"></progress>
@@ -35,27 +35,3 @@
   </body>
 </html>
 {% endblock %}
-    <script>
-      function submit_(){
-         const input = document.getElementById('file');
-      let objectURL;
-
-      input.addEventListener('change', function () {
-        if (objectURL) {
-          URL.revokeObjectURL(objectURL);  
-        }
-
-      });
-      var request =  $.ajax({
-        type: "POST",
-        url: "/getSongs",
-        data: {
-          "a":objectURL
-        }
-      });
-      request.done(function(data){
-        alert(data);
-      }
-      }
-      
-    </script>
