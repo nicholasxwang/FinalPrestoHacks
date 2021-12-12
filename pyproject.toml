@@ -2,18 +2,16 @@
 name = "repl_python3_FinalPrestoHacks"
 version = "0.1.0"
 description = ""
-authors = ["Your Name <you@example.com>"]
+authors = ["nicholasxwang <<>>"]
 
 [tool.poetry.dependencies]
 python = "^3.8"
-Flask-Mail = "^0.9.1"
-selenium = "^4.1.0"
-waitress = "^2.0.0"
-Flask = "^2.0.2"
 bs4 = "^0.0.1"
+Flask = "^2.0.2"
+Flask-Mail = "^0.9.1"
 pymongo = "^4.0.1"
-PyVirtualDisplay = "^2.2"
-wget = "^3.2"
+waitress = "^2.0.0"
+Werkzeug = "^2.0.2"
 youtube_dl = "^2021.6.6"
 
 [tool.poetry.dev-dependencies]
