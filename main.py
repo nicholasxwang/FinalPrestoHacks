@@ -119,6 +119,10 @@ mail = Mail(app)
 def main():
   return render_template('index.html')
 
-@app.route("/")
+@app.route("/getSongs", methods=["POST"])
+def songs():
+  songs = []
+  songs = main_program("http://143.110.149.115:8080/static/images"+request.form.get("a"));
+  return 
 #Run
 serve(app, host="0.0.0.0", port=8080)
