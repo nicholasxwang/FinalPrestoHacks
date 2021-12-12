@@ -20,7 +20,10 @@
         <div class="file">
           <form method="POST" enctype=multipart/form-data>
             <!--<label for="file">File: </label>--> 
-            <input type="file" id="file1" name="file1" onchange="uploadFile()"
+            <script>
+              $(":file").filestyle();
+            </script>
+            <input  data-buttonText="Upload an Image" type="file" id="file1" name="file1" onchange="uploadFile()"
                    accept="image/png, image/jpeg, .gif, .png, .jpg, .jpeg">
             <input value="Search" type="submit">
             </form>

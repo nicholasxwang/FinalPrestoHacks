@@ -3,6 +3,7 @@
 
 <!--Javascript!-->
 <script src="/static/nodejs/main.js"></script>
+<script type="text/javascript" src="js/bootstrap-filestyle.min.js"> </script>
 <!--Jquery!-->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
@@ -13,7 +14,7 @@
 <link rel="apple-touch-icon" href="https://www.michsky.com/wp-content/uploads/2021/05/cropped-Favicon-180x180.png"/>
 <!--Title!-->
 <title>MusiqueWorld</title>
-{% block main %} {% endblock %}
+
 <script>
   document.body.style.backgroundImage = "url('/static/images/Background.jpg')";
 </script>
@@ -29,12 +30,6 @@
 
 </script>
 <style>
-input[type=text] {padding:5px; border:2px solid #ccc; 
--webkit-border-radius: 5px;
-    border-radius: 5px;
-}
-input[type=text]:focus {border-color:#333; }
-
 .quote {
 	padding: 6vmin;
 	background: $background;
@@ -59,12 +54,5 @@ input[type=text]:focus {border-color:#333; }
 	}
 }
 
-
-  body {
-    background-image: url('https://www.w3docs.com/uploads/media/default/0001/01/477719675fecaac0362957c214fb9aa56fca99b5.jpeg');
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: center;
-  }
-
 </style>
+{% block main %} {% endblock %}
