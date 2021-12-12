@@ -155,6 +155,7 @@ function uploadFile() {
     }
 
   });
+  alert(objectURL);
   var request =  $.ajax({
     type: "POST",
     url: "/getSongs",
