@@ -1,6 +1,7 @@
 //Reference: 
 //https://www.onextrapixel.com/2012/12/10/how-to-create-a-custom-file-input-with-jquery-css3-and-php/
-;(function($) {
+//;
+(function($) {
 
 		  // Browser supports HTML5 multiple file?
 		  var multipleSupport = typeof $('<input/>')[0].multiple !== 'undefined',
