@@ -42,10 +42,10 @@ p {
     color: #fff;
     padding: 5px 10px;
     margin: 0 5px;
-    background-color: darken($file-upload-color, 2);
+    background-color: darken(rgba(256,256,256,0.2), 2);
     @include transition(all 0.2s ease-in);
     &:hover {
-      background-color: darken($file-upload-color, 5);
+      background-color: darken(rgba(256,256,256,0.2), 5);
     }
   }
 }
@@ -73,7 +73,7 @@ p {
     //border: 1px solid #ccc;
 }
 .file-upload-input {
-    width: $file-upload-size;
+    width: 300px;
     color: #fff;
     font-size: 16px;
     padding: 11px 17px; 
