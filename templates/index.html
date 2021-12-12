@@ -21,7 +21,8 @@
 
         <div class="file-upload-button">
             <!--<label for="file">File: </label>--> 
-            <input type="file" id="file" name="myfiles[]" multiple onchange="uploadFile()"/>
+            <input type="file" id="file-upload-input" name="myfiles[]" multiple onchange="uploadFile()"/>
+            <button onclick="submit_()">Submit</button>
         </div>
 
         <progress id="progressBar" value="0" max="100" style="width:300px;"></progress>
@@ -30,42 +31,27 @@
       </div>
     </div>
     <script>
-      const input = document.getElementById('upload');
-      const link = document.getElementById('link');
+      function submit_(){
+         const input = document.getElementById('file-upload-input');
       let objectURL;
 
       input.addEventListener('change', function () {
         if (objectURL) {
-          // revoke the old object url to avoid using more memory than needed
           URL.revokeObjectURL(objectURL);  
         }
 
-        const file = this.files[0];
-        objectURL = URL.createObjectURL(file);
-
-        link.download = file.name; // this name is used when the user downloads the file
-        link.href = objectURL;
       });
       var request =  $.ajax({
         type: "POST",
-        url: "/checkValidZipCode",
+        url: "/getSongs",
         data: {
-          "code":document.getElementById("zipcode").value
+          "a":objectURL
         }
       });
       request.done(function(data){
-        if (data=="True"){
-          document.getElementById("bubble").style.display="block";
-          document.getElementById("bubble2").style.display="none";
-          document.getElementById("bubble").innerHTML = "Message: Valid Zip Code!";
-          document.getElementById("zipValid").style.display="block";
-      }else{
-        document.getElementById("bubble2").style.display="block";
-        document.getElementById("bubble").style.display="none";
-        document.getElementById("bubble2").innerHTML = "Message: Invalid Zip Code!";
-        document.getElementById("zipValid").style.display="none";
+        alert(data);
       }
-      });
+      }
       
     </script>
   </body>
