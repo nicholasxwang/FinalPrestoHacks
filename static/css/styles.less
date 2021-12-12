@@ -1,19 +1,8 @@
-/*@import "compass/css3";*/
-
+/*Imports*/
 @import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100;200;300;400;500;600;700;800;900&display=swap');
-
-/* $background: #e74c3c;
- $file-upload-color: rgba(256,256,256,0.2);
- $file-upload-size: 300px;*/
-
-* {
-    margin: 0;
-    padding: 0;
-    font-family: Lato, Arial; 
-    @include box-sizing(border-box);
-}
-body { 
-    background-image: linear-gradient(rgba(0, 0, 0, 0.525), rgba(0, 0, 0, 0.5)), url(https://PrestoHacks.nicholasxwang.repl.co/static/images/Background.jpg) !important; /*Image from: https://unsplash.com/images/things/music*/ 
+/* Main */
+body {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.525), rgba(0, 0, 0, 0.5)), url(https://PrestoHacks.nicholasxwang.repl.co/static/images/Background.jpg) !important; /*Image from: https://unsplash.com/images/things/music*/ 
     background: no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -22,83 +11,237 @@ body {
     color: white;
     font-family: 'Lexend Deca', sans-serif;
 }
-h1 {
-    font-weight: normal;
-    font-size: 40px;
-    font-weight: normal;
-    text-transform: uppercase;
-    span { 
-        font-size: 13px;
-        display: block;
-        padding-left: 4px;
-    }
+
+button{
+  padding:20px;
+  margin:10px;
+  background:linear-gradient(to right, #fc2b58,#9640ff);
+  color:white;
+  border-style:none;
+  border-radius:10px;
+  font-size:1.5em;
+  font-family: 'Lexend Deca', sans-serif;
 }
-p {
-  margin-top: 200px;
-  a {
-    text-transform: uppercase;
-    text-decoration: none;
-    display: inline-block;
-    color: #fff;
-    padding: 5px 10px;
-    margin: 0 5px;
-    background-color: darken(rgba(256,256,256,0.2), 2);
-    @include transition(all 0.2s ease-in);
-    &:hover {
-      background-color: darken(rgba(256,256,256,0.2), 5);
-    }
-  }
-}
-.custom-file-upload-hidden {
-    display: none;
-    visibility: hidden;
-    position: absolute;
-    left: -9999px;
-}
-.custom-file-upload {
-    display: block;
-    width: auto;
-    font-size: 16px;
-    margin-top: 30px;
-    //border: 1px solid #ccc;
-    label {
-        display: block;
-        margin-bottom: 5px;
-    }
+button:hover{
+  background:linear-gradient(to right, #941b35,#5a2699);
 }
 
-.file-upload-wrapper {
-    position: relative; 
-    margin-bottom: 5px;
-    //border: 1px solid #ccc;
+input {
+  margin: 10px;
+  padding: 10px;
+  border-radius: 10px;
 }
-.file-upload-input {
-    width: 300px;
-    color: #fff;
-    font-size: 16px;
-    padding: 11px 17px; 
-    border: none;
-    background-color: rgba(256,256,256,0.2); 
-    @include transition(all 0.2s ease-in); 
-    float: left; /* IE 9 Fix */
-    &:hover, &:focus { 
-        background-color: darken(rgba(256,256,256,0.2), 5);
-        outline: none; 
-    }
+
+h1 {
+  margin: 10px;
 }
-.file-upload-button {
-    cursor: pointer; 
-    display: inline-block; 
-    color: #fff;
-    font-size: 16px;
-    text-transform: uppercase;
-    padding: 11px 20px; 
-    border: none;
-    margin-left: -1px;  
-    background-color: darken(rgba(256,256,256,0.2), 10); 
-    float: left; /* IE 9 Fix */
-    @include transition(all 0.2s ease-in);
-    &:hover {
-        background-color: darken(rgba(256,256,256,0.2), 20);
-    }
+
+/*Classes*/
+.button {
+	 --primary: #275efe;
+	 --primary-dark: #2055ee;
+	 --primary-darkest: #133fc0;
+	 --text: #fff;
+	 --text-opacity: 1;
+	 --success: #2b3044;
+	 --success-scale: 0.2;
+	 --success-opacity: 0;
+	 --border-radius: 7;
+	 --overflow: hidden;
+	 --rotate: 0;
+	 --plane-x: 0;
+	 --plane-y: 0;
+	 --plane-opacity: 1;
+	 --left-wing-background: var(--primary);
+	 --left-wing-first-x: 0;
+	 --left-wing-first-y: 0;
+	 --left-wing-second-x: 50;
+	 --left-wing-second-y: 0;
+	 --left-wing-third-x: 0;
+	 --left-wing-third-y: 100;
+	 --left-body-background: var(--primary);
+	 --left-body-first-x: 50;
+	 --left-body-first-y: 0;
+	 --left-body-second-x: 50;
+	 --left-body-second-y: 100;
+	 --left-body-third-x: 0;
+	 --left-body-third-y: 100;
+	 --right-wing-background: var(--primary);
+	 --right-wing-first-x: 50;
+	 --right-wing-first-y: 0;
+	 --right-wing-second-x: 100;
+	 --right-wing-second-y: 0;
+	 --right-wing-third-x: 100;
+	 --right-wing-third-y: 100;
+	 --right-body-background: var(--primary);
+	 --right-body-first-x: 50;
+	 --right-body-first-y: 0;
+	 --right-body-second-x: 50;
+	 --right-body-second-y: 100;
+	 --right-body-third-x: 100;
+	 --right-body-third-y: 100;
+	 display: block;
+	 cursor: pointer;
+	 position: relative;
+	 border: 0;
+	 padding: 8px 0;
+	 min-width: 100px;
+	 text-align: center;
+	 margin: 0;
+	 line-height: 24px;
+	 font-family: inherit;
+	 font-weight: 500;
+	 font-size: 14px;
+	 background: none;
+	 outline: none;
+	 color: var(--text);
+	 transform: rotate(calc(var(--rotate) * 1deg)) translateZ(0);
+	 -webkit-appearance: none;
+	 -webkit-tap-highlight-color: transparent;
 }
+ .button .left, .button .right {
+	 position: absolute;
+	 left: 0;
+	 top: 0;
+	 right: 0;
+	 bottom: 0;
+	 opacity: var(--plane-opacity);
+	 transform: translate(calc(var(--plane-x) * 1px), calc(var(--plane-y) * 1px)) translateZ(0);
+}
+ .button .left:before, .button .right:before, .button .left:after, .button .right:after {
+	 content: '';
+	 position: absolute;
+	 left: 0;
+	 top: 0;
+	 right: 0;
+	 bottom: 0;
+	 border-radius: calc(var(--border-radius) * 1px);
+	 transform: translate(var(--x, 0.4%), var(--y, 0)) translateZ(0);
+	 z-index: var(--z-index, 2);
+	 background: var(--background, var(--left-wing-background));
+	 clip-path: polygon(calc(var(--first-x, var(--left-wing-first-x)) * 1%) calc(var(--first-y, var(--left-wing-first-y)) * 1%), calc(var(--second-x, var(--left-wing-second-x)) * 1%) calc(var(--second-y, var(--left-wing-second-y)) * 1%), calc(var(--third-x, var(--left-wing-third-x)) * 1%) calc(var(--third-y, var(--left-wing-third-y)) * 1%));
+}
+ .button .left:after {
+	 --x: 0;
+	 --z-index: 1;
+	 --background: var(--left-body-background);
+	 --first-x: var(--left-body-first-x);
+	 --first-y: var(--left-body-first-y);
+	 --second-x: var(--left-body-second-x);
+	 --second-y: var(--left-body-second-y);
+	 --third-x: var(--left-body-third-x);
+	 --third-y: var(--left-body-third-y);
+}
+ .button .right:before {
+	 --x: -0.4%;
+	 --z-index: 2;
+	 --background: var(--right-wing-background);
+	 --first-x: var(--right-wing-first-x);
+	 --first-y: var(--right-wing-first-y);
+	 --second-x: var(--right-wing-second-x);
+	 --second-y: var(--right-wing-second-y);
+	 --third-x: var(--right-wing-third-x);
+	 --third-y: var(--right-wing-third-y);
+}
+ .button .right:after {
+	 --x: 0;
+	 --z-index: 1;
+	 --background: var(--right-body-background);
+	 --first-x: var(--right-body-first-x);
+	 --first-y: var(--right-body-first-y);
+	 --second-x: var(--right-body-second-x);
+	 --second-y: var(--right-body-second-y);
+	 --third-x: var(--right-body-third-x);
+	 --third-y: var(--right-body-third-y);
+}
+ .button span {
+	 display: block;
+	 position: relative;
+	 z-index: 4;
+	 opacity: var(--text-opacity);
+}
+ .button span.success {
+	 z-index: 0;
+	 position: absolute;
+	 left: 0;
+	 right: 0;
+	 top: 8px;
+	 transform: rotate(calc(var(--rotate) * -1deg)) scale(var(--success-scale)) translateZ(0);
+	 opacity: var(--success-opacity);
+	 color: var(--success);
+}
+ * {
+	 box-sizing: inherit;
+}
+ *:before, *:after {
+	 box-sizing: inherit;
+}
+ body {
+	 min-height: 100vh;
+	 display: flex;
+	 justify-content: center;
+	 align-items: center;
+}
+ body .dribbble {
+	 position: fixed;
+	 display: block;
+	 right: 20px;
+	 bottom: 20px;
+}
+ body .dribbble img {
+	 display: block;
+	 height: 28px;
+}
+ body .twitter {
+	 position: fixed;
+	 display: block;
+	 right: 64px;
+	 bottom: 14px;
+}
+ body .twitter svg {
+	 width: 32px;
+	 height: 32px;
+	 fill: #1da1f2;
+}
+
+.btn {
+  width: 15rem;
+  height: 4rem;
+  border-radius: 1rem;
+  box-shadow: 0.3rem 0.3rem 0.6rem var(--greyLight-2), -0.2rem -0.2rem 0.5rem var(--white);
+  justify-self: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+.btn__primary {
+  grid-column: 1/2;
+  grid-row: 4/5;
+  background: var(--primary);
+  box-shadow: inset 0.2rem 0.2rem 1rem var(--primary-light), inset -0.2rem -0.2rem 1rem var(--primary-dark), 0.3rem 0.3rem 0.6rem var(--greyLight-2), -0.2rem -0.2rem 0.5rem var(--white);
+  color: var(--greyLight-1);
+}
+.btn__primary:hover {
+  color: var(--white);
+}
+.btn__primary:active {
+  box-shadow: inset 0.2rem 0.2rem 1rem var(--primary-dark), inset -0.2rem -0.2rem 1rem var(--primary-light);
+}
+.btn__secondary {
+  grid-column: 1/2;
+  grid-row: 5/6;
+  color: var(--greyDark);
+}
+.btn__secondary:hover {
+  color: var(--primary);
+}
+.btn__secondary:active {
+  box-shadow: inset 0.2rem 0.2rem 0.5rem var(--greyLight-2), inset -0.2rem -0.2rem 0.5rem var(--white);
+}
+.btn p {
+  font-size: 1.6rem;
+}
+
+/*Id*/
