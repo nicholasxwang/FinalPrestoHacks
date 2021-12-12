@@ -679,18 +679,21 @@ def allowed_file(filename):
 @app.route('/', methods=['POST'])
 def upload_file():
     if request.method == 'POST':
-        #return str(request.files)
+        return str(request.files)
         # check if the post request has the file part
-        if 'file' not in request.files:
+        if 'file1' not in request.files:
+            print("1")
             flash('No file part')
             return redirect(request.url)
-        file = request.files['file']
+        file = request.files['file1']
         # If the user does not select a file, the browser submits an
         # empty file without a filename.
         if file.filename == '':
+            print("2")
             flash('No selected file')
             return redirect(request.url)
         if file and allowed_file(file.filename):
+            print("3")
             filename = secure_filename(file.filename)
             file.save(os.path.join(UPLOAD_FOLDER, filename))
             a = main_program(os.path.join(UPLOAD_FOLDER, filename))
