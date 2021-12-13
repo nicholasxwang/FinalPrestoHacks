@@ -14,8 +14,8 @@
     <meta name="theme-color" content="#11022C">
   </head>
   <body>
-    <div style="vertical-align: top;">
-      <div style="text-align:left;">
+    <center>
+      <!--<div style="text-align:left;">!-->
         <h1 align="left" style="vertical-align: top;"><img src="static/images/Logo.png" style="height:1.3em;" >MusiqueWorld</h1>
         <div class="file">
           <form method="POST" enctype="multipart/form-data">
@@ -27,13 +27,12 @@
                    accept="image/png, image/jpeg, .gif, .png, .jpg, .jpeg">
             <input class="submit" value="Search" type="submit">
             </form>
-        </div>
 
         <progress id="progressBar" value="0" max="100" style="width:300px;"></progress>
         <!--<h3 id="status"></h3>!-->
         <p id="loaded_n_total"></p>
-      </div>
-    </div>
+        <!--</div>!-->
+      </center>
     <script>
       function _(el) {
   return document.getElementById(el);
